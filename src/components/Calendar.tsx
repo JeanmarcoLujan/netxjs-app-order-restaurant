@@ -19,6 +19,8 @@ const CalendarComponent: FC<CalendarProps> = ({ days, closedDays }) => {
 
   // Determine if today is closed
   const today = days.find((d) => d.dayOfWeek === now.getDay())
+
+
   const rounded = roundToNearestMinutes(now, OPENING_HOURS_INTERVAL)
   const closing = parse(today!.closeTime, 'kk:mm', now)
   const tooLate = !isBefore(rounded, closing)

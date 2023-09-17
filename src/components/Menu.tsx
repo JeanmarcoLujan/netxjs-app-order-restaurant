@@ -25,7 +25,7 @@ const Menu: FC<MenuProps> = ({ selectedTime, addToCart }) => {
   })
 
   return (
-    <div className='bg-white'>
+    <div className='bg-white'> 
       <div className='mx-auto max-w-2xl py-16 px-4 sm:py-24 lg:max-w-full'>
         <div className='flex w-full justify-between'>
           <h2 className='flex items-center gap-4 text-2xl font-bold tracking-tight text-gray-900'>
@@ -46,9 +46,10 @@ const Menu: FC<MenuProps> = ({ selectedTime, addToCart }) => {
         <div className='mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
           {filteredMenuItems?.map((menuItem) => (
             <div key={menuItem.id} className='group relative'>
+              asdas
               <div className='min-h-80 aspect-w-1 aspect-h-1 lg:aspect-none w-full overflow-hidden rounded-md bg-gray-200 hover:opacity-75 lg:h-80'>
                 <div className='relative h-full w-full object-cover object-center lg:h-full lg:w-full'>
-                  <Image src={menuItem.url} alt={menuItem.name} fill style={{ objectFit: 'cover' }} />
+                  <Image src={menuItem.imageKey} alt={menuItem.name} fill style={{ objectFit: 'cover' }} />
                 </div>
               </div>
               <div className='mt-4 flex justify-between'>
@@ -63,13 +64,10 @@ const Menu: FC<MenuProps> = ({ selectedTime, addToCart }) => {
                 <p className='text-sm font-medium text-gray-900'>${menuItem.price.toFixed(2)}</p>
               </div>
 
-              <Button
-                className='mt-4'
-                onClick={() => {
-                  addToCart(menuItem.id, 1)
-                }}>
+              <button className='mt-4'
+                onClick={() => { addToCart(menuItem.id, 1) }}>
                 Add to cart
-              </Button>
+              </button>
             </div>
           ))}
         </div>

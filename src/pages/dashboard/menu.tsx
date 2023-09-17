@@ -82,7 +82,10 @@ const Menu: FC = () => {
   }
 
   const addMenuItem = async () => {
-    const key = await handleImgUpload()
+
+    console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+    console.log(await handleImgUpload());
+    const key = "https://placehold.co/600x400?font=food"; // await handleImgUpload()
     if (!key) throw new Error('No key')
 
     await addItem({
@@ -175,7 +178,8 @@ const Menu: FC = () => {
               <div key={menuItem.id}>
                 <p>{menuItem.name}</p>
                 <div className='relative h-40 w-40'>
-                  <Image priority fill alt='' src={menuItem.url} />
+                  <Image priority fill alt='' src={menuItem.imageKey} />
+                  
                 </div>
                 <button
                   onClick={() => handleDelete(menuItem.imageKey, menuItem.id)}

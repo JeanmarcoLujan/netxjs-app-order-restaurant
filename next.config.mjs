@@ -14,7 +14,7 @@ const config = {
     defaultLocale: 'en',
   },
   images: {
-    domains: ['youtube-booking-software.s3.eu-central-1.amazonaws.com'],
+    domains: ['youtube-booking-software.s3.eu-central-1.amazonaws.com','placehold.co'],
   },
 }
 export default config

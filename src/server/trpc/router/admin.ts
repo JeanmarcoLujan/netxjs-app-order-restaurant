@@ -46,6 +46,7 @@ export const adminRouter = router({
     const key = `${id}.${ex}`
 
     const { url, fields } = (await new Promise((resolve, reject) => {
+      /*
       s3.createPresignedPost(
         {
           Bucket: 'youtube-booking-software',
@@ -61,6 +62,7 @@ export const adminRouter = router({
           resolve(signed)
         }
       )
+        */
     })) as any as { url: string; fields: any }
 
     return { url, fields, key }
